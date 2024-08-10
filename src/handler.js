@@ -1,6 +1,14 @@
 const { nanoid } = require('nanoid');
 const notes = require('./notes');
 
+const landingHandler = (request, h) => {
+  const response = h.response(
+    'Welcome to the NoteManager. Manage your note here!',
+  );
+
+  return response;
+};
+
 const addNoteHandler = (request, h) => {
   const { title, tags, body } = request.payload;
 
@@ -123,6 +131,7 @@ const deleteNoteByIdHandler = (request, h) => {
 };
 
 module.exports = {
+  landingHandler,
   addNoteHandler,
   getAllNotesHandler,
   getNoteByIdHandler,

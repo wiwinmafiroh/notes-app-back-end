@@ -1,4 +1,5 @@
 const {
+  landingHandler,
   addNoteHandler,
   getAllNotesHandler,
   getNoteByIdHandler,
@@ -7,6 +8,11 @@ const {
 } = require('./handler');
 
 const routes = [
+  {
+    method: 'GET',
+    path: '/',
+    handler: landingHandler,
+  },
   {
     method: 'POST',
     path: '/notes',
